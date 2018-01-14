@@ -15,17 +15,10 @@ function registerSession(ctx) {
   chatId = ctx.chat.id
 }
 
-// function sendPing() {
-//   if ( chatId != 0 ) {
-//     telegram.sendMessage(chatId, 'Ping')
-//   }
-//   setTimeout(sendPing, 5000)
-// }
-
 
 bot.start((ctx) => {
   console.log('started:', ctx.from.id)
-  return ctx.reply('Welcome!')
+  return ctx.reply('Welcome to Trace.Coffee\'s update bot!')
   resgisterSession(ctx)
 })
 
@@ -36,7 +29,6 @@ bot.hears('hi', (ctx) => {
       registerSession(ctx)
     } 
   })
-bot.hears(/buy/i, (ctx) => ctx.reply('Buy-buy!'))
 bot.on('sticker', (ctx) => ctx.reply('👍'))
 
 bot.startPolling()
